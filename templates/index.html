@@ -1,0 +1,1059 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  ::placeholder
+  {
+      color: black !important;
+  }
+  .sr
+  {
+      height: 65px !important;
+  }
+.modernhero{
+    background:transparent;
+    border-radius:30px;
+    padding:40px;
+    margin-bottom:30px;
+}
+
+.bannerimg{
+    
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+
+}
+
+.herohead{
+    font-size:55px;
+    font-weight:800;
+    line-height:1.2;
+}
+.herobg{
+    background:linear-gradient(135deg,#e8f7e9,#dff5e3);
+    border-radius:35px;
+    padding:30px;
+}
+
+.herotext{
+    font-size:18px;
+    color:#666;
+}
+
+.heroBtn{
+    padding:12px 28px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+    .modernhero{
+        padding:20px;
+        text-align:center;
+    }
+
+    .herohead{
+        font-size:35px;
+    }
+
+    .bannerimg{
+        margin-top:20px;
+        max-height:250px;
+    }
+
+}
+
+.freshbadge{
+    background:#d4f5df;
+    color:#198754;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.herohead{
+    font-size:60px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.herotext{
+    font-size:20px;
+    color:#555;
+}
+
+.heroBtn{
+    padding:12px 30px;
+    border-radius:10px;
+    font-size:18px;
+}
+
+.categorycard{
+    background:white;
+    border-radius:20px;
+    text-align:center;
+    padding:20px;
+    transition:0.4s;
+    box-shadow:0px 2px 15px rgba(0,0,0,0.08);
+}
+
+.categorycard:hover{
+    transform:translateY(-8px);
+}
+
+.categoryimg{
+    height:90px;
+    width:90px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.productcard{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0px 3px 15px rgba(0,0,0,0.08);
+}
+
+.productcard:hover{
+    transform:translateY(-10px);
+}
+
+@media(max-width:768px){
+
+    .herohead{
+        font-size:38px;
+    }
+
+    .bannerimg{
+        max-height:250px;
+    }
+
+}
+.card{
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+.categorybox{
+    min-height:190px;
+    border-radius:20px;
+    transition:0.4s;
+    background:white;
+    box-shadow:0px 3px 15px rgba(0,0,0,0.08);
+    border:none;
+}
+
+.categorybox:hover{
+    transform:translateY(-8px);
+}
+.modernproduct{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+    border:none;
+    height:100%;
+}
+
+.modernproduct:hover{
+    transform:translateY(-10px);
+}
+
+.productimgbox{
+    height:220px;
+    background:#f8f9fa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:10px;
+}
+
+.productimg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.pricebadge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#198754;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    z-index:2;
+}
+.modernproduct{
+    position:relative;
+}
+
+.addbtn{
+    border-radius:12px;
+    padding:12px;
+    font-weight:bold;
+}
+
+.input-group-text{
+    cursor:pointer;
+    background:#198754 !important;
+    color:white !important;
+    border:none !important;
+}
+
+@media(max-width:768px){
+
+    .productimgbox{
+        height:180px;
+    }
+
+    .productimg{
+        height:150px;
+    }
+
+}
+.servicecard{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    transition:0.4s;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+    height:100%;
+}
+
+.servicecard:hover{
+    transform:translateY(-8px);
+}
+
+.serviceicon{
+    height:70px;
+    width:70px;
+    background:#198754;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:28px;
+}
+
+.servicecard h5{
+    margin:0;
+    font-weight:bold;
+}
+
+.servicecard p{
+    margin:0;
+    color:#666;
+}
+.herohead{
+    font-size:55px;
+    font-weight:800;
+    line-height:1.2;
+    color:#1d1d1d;
+}
+
+.herotext{
+    font-size:18px;
+    color:#555;
+    line-height:1.7;
+}
+
+.freshbadge{
+    background:#d8ffe3;
+    color:#198754;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.heroBtn{
+    padding:14px 30px;
+    border-radius:14px;
+    font-weight:bold;
+    box-shadow:0px 4px 15px rgba(25,135,84,0.3);
+}
+.bannerimg{
+    width:100%;
+    max-height:420px;
+    object-fit:contain;
+    filter:drop-shadow(0px 10px 20px rgba(0,0,0,0.15));
+}
+.sliderhero{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+}
+
+.sliderhero img{
+    transition:1s;
+}
+
+.sliderhero:hover img{
+    transform:scale(1.08);
+}
+
+.slidercontent{
+    transition:0.6s;
+}
+
+.sliderhero:hover .slidercontent{
+    transform:translateY(-10px);
+}
+
+.sliderhero::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+    );
+    transition:0.8s;
+    z-index:2;
+}
+
+.sliderhero:hover::before{
+    left:100%;
+}
+
+.shopbtn{
+    transition:0.4s;
+}
+
+.shopbtn:hover{
+    transform:scale(1.08);
+    box-shadow:0px 10px 25px rgba(25,135,84,0.4);
+}
+.farmingsection{
+    background:linear-gradient(135deg,#e8f7e9,#dff5e3);
+    border-radius:35px;
+    padding:50px;
+    overflow:hidden;
+}
+
+.farmingimg{
+    width:100%;
+    height:420px;
+    object-fit:contain;
+    filter:drop-shadow(0px 10px 20px rgba(0,0,0,0.2));
+}
+
+@media(max-width:768px){
+
+    .farmingimg{
+        height:260px;
+        margin-bottom:20px;
+    }
+
+}
+.sliderhero{
+    box-shadow:0px 10px 35px rgba(0,0,0,0.15);
+}
+/* OFFER SECTION */
+
+.offerbox1,
+.offerbox2,
+.offerbox3{
+    min-height:220px;
+    transition:0.5s;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.offerbox1{
+    background:
+    linear-gradient(rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)),
+    url('/static/images/s5.jpg');
+}
+
+.offerbox2{
+    background:
+    linear-gradient(rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)),
+    url('/static/images/s4.jpg');
+}
+
+.offerbox3{
+    background:
+    linear-gradient(rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)),
+    url('/static/images/s3.jpg');
+}
+
+.offerbox1:hover,
+.offerbox2:hover,
+.offerbox3:hover{
+    transform:translateY(-10px);
+    box-shadow:0px 20px 40px rgba(0,0,0,0.25);
+}
+.categoryrow{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    scrollbar-width:none;
+    padding-bottom:10px;
+}
+
+.categoryrow::-webkit-scrollbar{
+    display:none;
+}
+
+.categorycol{
+    min-width:190px;
+}
+
+.categorybox{
+    min-height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.categorybox img{
+    height:140px !important;
+    width:100%;
+    object-fit:cover;
+    border-radius:18px;
+    transition:0.4s;
+}
+.categorybox:hover img{
+    transform:scale(1.08);
+}
+</style>
+
+<!-- HERO SECTION START -->
+
+<div class="container-fluid px-4 mt-4">
+
+<div class="row g-4">
+
+<!-- LEFT GROCERY SLIDER -->
+
+<div class="col-lg-6 px-2">
+
+<div class="position-relative overflow-hidden sliderhero rounded-4">
+
+<img src="{% static 'images/abcd.png' %}"
+style="
+width:100%;
+height:520px;
+object-fit:cover;
+border-radius:28px;">
+
+<div style="
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+"></div>
+
+<div class="slidercontent"
+style="
+position:absolute;
+top:50%;
+left:8%;
+transform:translateY(-50%);
+color:white;
+z-index:2;
+max-width:500px;
+">
+
+<span class="freshbadge">
+
+Fresh Market
+
+</span>
+
+<h1 style="
+font-size:50px;
+font-weight:800;
+line-height:1.1;
+margin-top:20px;
+">
+
+Fresh Vegetables
+& Fruits
+
+</h1>
+
+<p style="
+font-size:18px;
+margin-top:20px;
+">
+
+Healthy groceries and
+fresh products directly
+from farms.
+
+</p>
+
+<a href="/product/"
+class="btn btn-success px-5 py-3 mt-3 rounded-3 shopbtn">
+
+Shop Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT FARMING SLIDER -->
+
+<div class="col-lg-6">
+
+<div class="position-relative overflow-hidden sliderhero rounded-4">
+
+<img src="{% static 'images/f2.jpg' %}"
+style="
+width:100%;
+height:520px;
+object-fit:cover;
+">
+
+<div style="
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+"></div>
+
+<div class="slidercontent"
+style="
+position:absolute;
+top:50%;
+left:8%;
+transform:translateY(-50%);
+color:white;
+z-index:2;
+max-width:500px;
+">
+
+<span class="freshbadge">
+
+Smart Farming
+
+</span>
+
+<h1 style="
+font-size:50px;
+font-weight:800;
+line-height:1.1;
+margin-top:20px;
+">
+
+Seeds &
+Farming Tools
+
+</h1>
+
+<p style="
+font-size:18px;
+margin-top:20px;
+">
+
+Buy premium seeds,
+fertilizers and modern
+agriculture equipment.
+
+</p>
+
+<a href="/product/"
+class="btn btn-success px-5 py-3 mt-3 rounded-3 shopbtn">
+
+Explore Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO SECTION END -->
+ <!-- OFFER SECTION START -->
+
+<div class="container-fluid my-5">
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="p-4 rounded-5 shadow-lg text-white offerbox1">
+
+                <h2 class="fw-bold">
+                    20% OFF 🥦
+                </h2>
+
+                <p class="mt-3">
+                    Fresh vegetables directly from farms.
+                </p>
+
+                <button class="btn btn-light rounded-pill px-4">
+                    Shop Now
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="p-4 rounded-5 shadow-lg text-white offerbox2">
+
+                <h2 class="fw-bold">
+                    Organic Seeds 🌱
+                </h2>
+
+                <p class="mt-3">
+                    Premium quality farming seeds available.
+                </p>
+
+                <button class="btn btn-light rounded-pill px-4">
+                    Explore
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="p-4 rounded-5 shadow-lg text-white offerbox3">
+
+                <h2 class="fw-bold">
+                    Free Delivery 🚚
+                </h2>
+
+                <p class="mt-3">
+                    On orders above ₹499 only.
+                </p>
+
+                <button class="btn btn-light rounded-pill px-4">
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- OFFER SECTION END -->
+  <!--end search-->
+
+<div class="row bg-light py-3 justify-content-between categoryrow">
+
+    {% for r in cat  %}
+<div class="col categorycol p-2">
+
+   <div class="card shadow-sm border-0 rounded-4 text-center p-2 categorybox">
+
+      <a href="/product/?x={{r.id}}" 
+      class="text-dark text-decoration-none">
+<img src="../{{r.picture}}" 
+class="img-fluid mx-auto d-block"
+style="height:110px;width:100%;object-fit:contain;">
+
+        <h6 class="fw-bold mt-3">
+          {{r.title}}
+        </h6>
+
+      </a>
+
+    </div>
+
+</div>
+{% endfor %}
+<!-- end category -->
+</div>
+</marquee>
+<!-- start product -->
+<div class="row pt-4" style="background: #f8f9fa;">
+    <div class="col-sm-12 text-center ">
+        <div><b class="text-mycolor1">Our</b><b> Product</b></div>
+        <span>Lorem ipsum dolor sit, amet consectetu</span>
+        <hr class="w-25 mx-auto" style="height: 20px;"/>
+    </div>
+</div>
+<div class="row" style="background: #dcedcb;">
+   <div class="col-sm-12 px-4">
+        <div class="row">
+          {% for r in products %}
+          <!-- start product cart -->
+         <div class="col-lg-2 col-md-4 col-6 p-2">
+        <div class="modernproduct">
+
+    <!-- DISCOUNT BADGE -->
+
+    <div class="pricebadge">
+
+        ₹ {{r.discounted_price}}
+
+    </div>
+
+    <!-- PRODUCT IMAGE -->
+
+    <div class="productimgbox">
+
+        <img src="../{{r.picture}}" 
+        class="productimg">
+
+    </div>
+
+    <!-- PRODUCT INFO -->
+
+    <div class="p-3 text-center">
+
+        <h5 class="fw-bold">
+
+            {{r.title}}
+
+        </h5>
+
+        <p class="mb-2">
+
+            <span class="text-danger">
+
+                <s>₹100</s>
+
+            </span>
+
+            <span class="fw-bold">
+
+                ₹ {{r.discounted_price}}
+
+            </span>
+
+            / {{r.weight}}
+
+        </p>
+
+        <!-- CART FORM -->
+
+        <form method="post" action="/cart/">
+
+            {% csrf_token %}
+
+            <div class="input-group mb-3">
+
+                <span class="input-group-text"
+                onclick="funm{{r.id}}()">
+
+                    -
+
+                </span>
+
+                <input type="text"
+                name="qt"
+                value="0"
+                readonly
+                class="form-control text-center"
+                id="txtcart{{r.id}}">
+
+                <span class="input-group-text"
+                onclick="funp{{r.id}}()">
+
+                    +
+
+                </span>
+
+            </div>
+
+            <input type="hidden" name="pid" value="{{r.id}}">
+            <input type="hidden" name="pname" value="{{r.title}}">
+            <input type="hidden" name="pinfo" value="{{r.product_info}}">
+            <input type="hidden" name="pprice" value="{{r.price}}">
+            <input type="hidden" name="pweight" value="{{r.weight}}">
+            <input type="hidden" name="dprice" value="{{r.discounted_price}}">
+            <input type="hidden" name="ppicture" value="{{r.picture}}">
+
+            <button type="submit"
+            class="btn btn-success w-100 addbtn">
+
+                Add To Cart
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+          </div>
+      
+          <script>
+            var t{{r.id}}=document.getElementById("txtcart{{r.id}}")
+            var i{{r.id}}=0
+            function funp{{r.id}}()
+            {
+                t{{r.id}}.value=i{{r.id}}
+                i{{r.id}}++
+            }
+            function funm{{r.id}}()
+            {
+                if(i{{r.id}}>0)
+             {   
+                i{{r.id}}--
+                t{{r.id}}.value=i{{r.id}}
+                
+             }
+            }
+        </script>
+        
+          
+          <!-- end product cart -->
+           {% endfor %}
+  </div>
+ </div>
+</div>
+
+<!-- end product -->
+
+<div class="container py-5">
+
+<div class="row">
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="servicecard">
+
+<div class="serviceicon">
+
+<i class="fa-solid fa-seedling"></i>
+
+</div>
+
+<div>
+
+<h5>Seeds</h5>
+
+<p>Premium quality farming seeds.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="servicecard">
+
+<div class="serviceicon">
+
+<i class="fa-solid fa-flask"></i>
+
+</div>
+
+<div>
+
+<h5>Fertilizers</h5>
+
+<p>Organic and chemical fertilizers.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="servicecard">
+
+<div class="serviceicon">
+
+<i class="fa-solid fa-spray-can-sparkles"></i>
+
+</div>
+
+<div>
+
+<h5>Pesticides</h5>
+
+<p>Protect crops from harmful pests.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="servicecard">
+
+<div class="serviceicon">
+
+<i class="fa-solid fa-tractor"></i>
+
+</div>
+
+<div>
+
+<h5>Farm Equipment</h5>
+
+<p>Modern tools for smart farming.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+ <!--Services Start-->
+
+<div class="row py-2">
+    <div class="col-sm-12 text-center serviceheading">
+      <div class="fs-3 text-center">Our <b class="text-mycolor1">Services</b></div>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+      <hr class="w-25 mx-auto">
+    </div>
+    <div class="col-sm-10 mx-auto">
+      <div class="row py-3">
+        <!--Services Card Start-->
+       
+        <!--Services Card End-->
+        <!--Services Card Start-->
+       <div class="col-lg-3 col-md-6 p-3">
+
+  <div class="servicecard">
+
+    <div class="serviceicon">
+
+      <i class="fa-solid fa-truck"></i>
+
+    </div>
+
+    <div>
+
+      <h5>Free Shipping</h5>
+
+      <p>For all Order above 499/-</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 p-3">
+
+  <div class="servicecard">
+
+    <div class="serviceicon">
+
+      <i class="fa-solid fa-headset"></i>
+
+    </div>
+
+    <div>
+
+      <h5>Technical Support</h5>
+
+      <p>Mon-Sun 24x7 Available</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 p-3">
+
+  <div class="servicecard">
+
+    <div class="serviceicon">
+
+      <i class="fa-regular fa-clock"></i>
+
+    </div>
+
+    <div>
+
+      <h5>Fast Delivery</h5>
+
+      <p>Delivery on time at your Door</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 p-3">
+
+  <div class="servicecard">
+
+    <div class="serviceicon">
+
+      <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+    </div>
+
+    <div>
+
+      <h5>Return Policy</h5>
+
+      <p>Easy return within 2 Hours</p>
+
+    </div>
+
+  </div>
+
+</div>
+          <!--Services Card End-->
+      </div>
+    </div>
+  </div>
+  
+  <!--Services End-->
+<!-- javascript section start -->
+
+
+<!-- javascript section end -->
+
+
+
+
+ {% endblock %}

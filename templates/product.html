@@ -1,0 +1,565 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+  
+
+.productpage{
+    background:#f4f8f4;
+    padding:40px 20px;
+}
+
+.producttitle{
+    font-size:40px;
+    font-weight:800;
+}
+
+.productsearch{
+    height:60px;
+    border:none;
+    border-radius:18px;
+    padding-left:20px;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.searchbtn{
+    border-radius:18px;
+    padding:0px 30px;
+    font-weight:bold;
+}
+
+.categorysidebar{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.categorytitle{
+    background:#198754;
+    color:white;
+    padding:18px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.categoryitem{
+    padding:15px;
+    border-bottom:1px solid #eee;
+    transition:0.4s;
+}
+
+.categoryitem:hover{
+    background:#f4fff7;
+    transform:translateX(8px);
+}
+
+.categoryitem img{
+    height:60px;
+    width:60px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.productcard{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.08);
+    position:relative;
+    height:100%;
+}
+
+.productcard:hover{
+    transform:translateY(-8px);
+}
+
+.productimgbox{
+    height:240px;
+    overflow:hidden;
+}
+
+.productimg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.productcard:hover .productimg{
+    transform:scale(1.08);
+}
+
+.pricebadge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#198754;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    z-index:2;
+}
+
+.qtybtn{
+    width:45px;
+    height:45px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.qtyinput{
+    height:45px;
+}
+
+.addbtn{
+    height:50px;
+    border-radius:14px;
+    font-weight:bold;
+}
+.productpage{
+    background:linear-gradient(
+    to bottom,
+    #f4fff7,
+    #ffffff
+    );
+}
+/* PREMIUM HERO SECTION */
+
+.herobox{
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.herobox:hover{
+    transform:translateY(-12px) scale(1.01);
+    box-shadow:0px 25px 50px rgba(0,0,0,0.25);
+}
+
+.herobox::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.15);
+    transition:0.5s;
+    z-index:1;
+}
+
+.herobox:hover::before{
+    background:rgba(0,0,0,0.3);
+}
+
+.herobtn{
+    transition:0.4s;
+    font-weight:bold;
+}
+
+.herobtn:hover{
+    transform:scale(1.08);
+    background:#198754 !important;
+    color:white !important;
+}
+
+.herotext{
+    position:relative;
+    z-index:2;
+}
+
+
+</style>
+
+<div class="row">
+<div class="col-sm-12 text-center ">
+    <div><b class="text-mycolor1">Our Latest</b><b> Product</b></div>
+    <span>Lorem ipsum dolor sit, amet consectetu</span>
+    <hr class="w-25 mx-auto"/>
+</div>
+</div>
+<!--start search-->
+<div class="row my-4">
+
+<div class="col-lg-6 mx-auto">
+
+<form method="post">
+
+{% csrf_token %}
+
+<div class="input-group">
+
+<input type="text"
+name="search"
+class="form-control productsearch"
+placeholder="Search fresh products...">
+
+<button class="btn btn-success searchbtn">
+
+Search
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+<!--end search-->
+<div class="container-fluid my-5">
+
+<div class="row g-4">
+
+<!-- LEFT FARMING -->
+
+<div class="col-lg-6">
+
+<div class="p-5 rounded-5 shadow-lg h-100 position-relative overflow-hidden herobox"
+style='
+background:linear-gradient(
+135deg,
+rgba(0,0,0,0.3),
+rgba(0,0,0,0.3)
+),
+url("{% static 'images/c1.png' %}");
+background-size:cover;
+background-position:center;
+min-height:320px;
+'>
+
+<div class="text-white herotext">
+
+<h1 class="fw-bold display-4">
+
+Modern Farming 🌱
+
+</h1>
+
+<p class="mt-4 fs-5">
+
+Premium seeds, fertilizers and smart farming products.
+
+</p>
+
+<a href="#farmingsection"
+class="btn btn-light btn-lg rounded-pill px-4 mt-3 herobtn">
+
+Explore Farming
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT GROCERY -->
+
+<div class="col-lg-6">
+
+<div class="p-5 rounded-5 shadow-lg h-100 position-relative overflow-hidden"
+style="
+background:linear-gradient(
+135deg,
+rgba(0,0,0,0.3),
+rgba(0,0,0,0.3)
+),
+url('{% static "images/c2.png" %}');
+background-size:cover;
+background-position:center;
+min-height:320px;
+">
+
+<div class="text-white herotext">
+
+<h1 class="fw-bold display-4">
+
+Fresh Grocery 🛒
+
+</h1>
+
+<p class="mt-4 fs-5">
+
+Farm fresh fruits, vegetables and healthy groceries.
+
+</p>
+
+<a href="#grocerysection"
+class="btn btn-light btn-lg rounded-pill px-4 mt-3 herobtn">
+
+Shop Grocery
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="row">
+    <div class="col-lg-3 mb-4">
+       <div class="categorysidebar">
+            <div class="categorytitle">Our Top Category</div>
+            {% for r in categories %}
+           <div class="categoryitem">
+
+<a href="/product/?x={{r.id}}"
+class="text-dark d-flex align-items-center"
+style="text-decoration:none;gap:15px;">
+
+<img src="../{{r.picture}}">
+
+<b>
+
+{{r.title}}
+
+</b>
+
+</a>
+
+</div>
+            {% endfor %}
+            <div class="categoryitem">
+                <a href="/product/" style="text-decoration: none; background-color: lightgreen;" class="text-dark">Click to View All Product</a>
+            </div>
+       </div>
+    </div>
+    <div class="col-lg-9">
+       <div id="grocerysection">
+
+<div class="d-flex align-items-center justify-content-between mb-4">
+
+<h2 class="fw-bold">
+
+Fresh Grocery Products 🥦
+
+</h2>
+
+<a href="#"
+class="btn btn-success rounded-pill px-4">
+
+View All
+
+</a>
+
+</div>
+
+<div class="row">
+
+{% for r in products %}
+    <!-- start product cart -->
+    <div class="col-lg-4 col-md-6 p-3">
+        <div class="productcard">
+           
+           <div class="productimgbox">
+            <div class="pricebadge">
+
+₹ {{r.discounted_price}}
+
+</div>
+
+<img src="../{{r.picture}}"
+class="productimg">
+
+</div>
+            <div class="p-4 text-center">
+                <b>{{r.title}}</b><br>
+              <span>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <span class="text-danger"><s>100/-</s></span>
+                <span>{{r.weight}}</span>
+            </span>
+            <div class="mx-auto">
+               <form method="post" action="/cart/">
+                {% csrf_token %} 
+            <div class="input-group fs-4 mx-auto">
+                <span class="input-group-text fs-4 text-center" 
+                style="width: 55px !important; height: 35px;" id="btnm" onclick="funm{{r.id}}()">-</span>
+                <input type="text" name="qt" value="0" readonly class="border border-1 text-center form-control" 
+                style="width: 55px !important; height: 35px;" id="txtcart{{r.id}}" >
+                <span class="input-group-text fs-4 text-center" 
+                style="width: 55px !important; height: 35px;" id="btnp" onclick="funp{{r.id}}()">+</span>
+            </div>
+            <input type="hidden" name="pid" value="{{r.id}}">
+            <input type="hidden" name="pname" value="{{r.title}}">
+            <input type="hidden" name="pinfo" value="{{r.product_info}}">
+            <input type="hidden" name="pprice" value="{{r.price}}">
+            <input type="hidden" name="pweight" value="{{r.weight}}">
+            <input type="hidden" name="dprice" value="{{r.discounted_price}}">
+            <input type="hidden" name="ppicture" value="{{r.picture}}">
+            
+
+        
+            <br>
+         <input type="submit"
+value="Add To Cart 🛒"
+class="btn btn-success addbtn w-100 mt-3">
+              </form>
+            </div>    
+            </div>
+        </div>
+    </div>
+
+    <script>
+      var t{{r.id}}=document.getElementById("txtcart{{r.id}}")
+      var i{{r.id}}=0
+      function funp{{r.id}}()
+      {
+          t{{r.id}}.value=i{{r.id}}
+          i{{r.id}}++
+      }
+      function funm{{r.id}}()
+      {
+          if(i{{r.id}}>0)
+       {   
+          i{{r.id}}--
+          t{{r.id}}.value=i{{r.id}}
+          
+       }
+      }
+  </script>
+  
+    
+    <!-- end product cart -->
+     {% endfor %}
+  </div>
+    </div>
+</div> 
+</div>
+</div>
+<div id="farmingsection" class="mt-5">
+
+<div class="d-flex align-items-center justify-content-between mb-4">
+
+<h2 class="fw-bold">
+
+Farming Essentials 🌾
+
+</h2>
+
+<a href="#"
+class="btn btn-success rounded-pill px-4">
+
+Explore
+
+</a>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3">
+
+<div class="productcard p-4 text-center">
+
+<img src="{% static 'images/v1.jpg' %}"
+class="img-fluid mb-3"
+style="height:140px;object-fit:contain;">
+
+<h5 class="fw-bold">
+
+Organic Seeds
+
+</h5>
+
+<p class="text-muted">
+
+High quality farming seeds.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3">
+
+<div class="productcard p-4 text-center">
+
+<img src="{% static 'images/v2.jpg' %}"
+class="img-fluid mb-3"
+style="height:140px;object-fit:contain;">
+
+<h5 class="fw-bold">
+
+Fertilizers
+
+</h5>
+
+<p class="text-muted">
+
+Boost crop productivity naturally.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3">
+
+<div class="productcard p-4 text-center">
+
+<img src="{% static 'images/v3.jpg' %}"
+class="img-fluid mb-3"
+style="height:140px;object-fit:contain;">
+
+<h5 class="fw-bold">
+
+Farm Equipments
+
+</h5>
+
+<p class="text-muted">
+
+Modern farming tools & machines.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3">
+
+<div class="productcard p-4 text-center">
+
+<img src="{% static 'images/v4.png' %}"
+class="img-fluid mb-3"
+style="height:140px;object-fit:contain;">
+
+<h5 class="fw-bold">
+
+Crop Protection
+
+</h5>
+
+<p class="text-muted">
+
+Safe pesticides & crop care.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- javascript section start -->
+
+
+<!-- javascript section end -->
+
+
+{% endblock%}

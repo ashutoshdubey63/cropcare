@@ -1,0 +1,478 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .bg-mycolor1 {
+        background: #54b226;
+      }
+      .bg-mycolor2 {
+        background: #f8cb46;
+      }
+
+      .text-mycolor1 {
+        color: #f50057;
+      }
+      .text-mycolor2 {
+        color: #6a1b6a;
+      }
+      .ic {
+        color: #f8cb46;
+        height: 30px;
+        width: 28px;
+        text-align: center;
+        line-height: 28px;
+        border: 1px solid #f50057;
+        transition: 0.4s;
+      }
+      .ic:hover {
+        /*transform: translateY(-5px);*/
+        transform: scale(1.4);
+        transition: 5.1s;
+        background: #f50057;
+        color: white;
+        
+      }
+      #menu {
+        background-color: transparent !important;
+      }
+      .menu ul li a {
+        color: white;
+      }
+      .slider {
+        min-height: 450px;
+        background: linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(245, 0, 87, 0.3)
+          ),
+          url("{% static 'images/sho.jpeg'%}");
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .aboutcontent {
+        font-size: 18px;
+      }
+      .im {
+        height: 150px;
+      }
+      .imgpic {
+        transition: 2s;
+        height: 200px;
+        width: 100%;
+      }
+      .imgpic:hover {
+        transform: scale(1.1);
+        transition: 2s;
+      }
+      .ufooter {
+        min-height: 250px;
+        background: black;
+      }
+      .bfooter {
+        height: 50px;
+        background-color: #f50057;
+      }
+
+      .imgteam {
+        height: 300px;
+      }
+      .imgabout {
+        height: 250px;
+      }
+      .catic {
+        height: 60px;
+        width: 60px;
+        font-size: 30px;
+        border: 1px solid black;
+        border-radius: 7px;
+        line-height: 60px;
+        transition: 2s;
+      }
+      .catic:hover {
+        background: #f50057;
+        color: white;
+        transition: 2s;
+      }
+
+      /* .imgslider{
+        height: 500px;
+      } */
+
+      .catimg {
+        height: 130px;
+      }
+      .popularcat {
+        border: 0px;
+        transition: 2s;
+      }
+      .popularcat:hover {
+        transform: scale(1.09);
+        transition: 2s;
+      }
+      .txt {
+        height: 50px;
+        margin-bottom: 4%;
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 2px solid white !important;
+        border-radius: 0px !important;
+      }
+
+      .ta {
+        height: 80px;
+        margin-bottom: 4%;
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 2px solid white !important;
+        border-radius: 0px !important;
+      }
+      ::placeholder {
+        color: white !important;
+      }
+      .btn {
+        height: 50px !important;
+        color: white !important;
+      }
+      .login {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+      }
+      #verticalmenu ul li{
+        list-style-type: none;
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+      #verticalmenu ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+      }
+      .dashboardic{
+        height: 50px;
+        width: 50px;
+        border-radius: 7px;
+        font-size: 25px;
+        line-height: 40px;
+        padding: 5px;
+      }
+      .dashdiv{
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+      #dashboard a{
+        text-decoration: none;
+      }
+      .dashboardcard:hover{
+        transform: scale(1.1);
+        transition: 2s;
+      }
+      .dashboard{
+        transition: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- start-heder -->
+      <div class="row header p-4">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 py-3">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="fs-2">
+                Crop<b class="text-mycolor1"
+                  >Care <i class="fa-solid fa-graduation-cap"></i
+                ></b>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <b><i class="fa-solid fa-envelope ic"></i> MailUs</b><br />
+              mosthost3@gmail.com
+            </div>
+            <div class="col-sm-2">
+              <b><i class="fa-solid fa-phone ic"></i> CallUs</b><br />
+              +91 9135660323
+            </div>
+            <div class="col-sm-2 pt-2">
+              <i class="fa-brands fa-square-facebook ic"></i>
+              <i class="fa-brands fa-square-twitter ic"></i>
+              <i class="fa-brands fa-linkedin ic"></i>
+              <i class="fa-brands fa-square-instagram ic"></i>  
+            </div>
+            <div class="col-sm-2">
+              <a href="/cart/" class="btn bg-mycolor1 text-light" style="position: relative;" ><span class="position-absolute top-0 start-100 translate-middle bg-mycolor2 badge">3</span>
+               <i class="fa-solid fa-cart-shopping"></i> cart </a>
+             </div>
+          </div>
+        </div>
+        
+      </div>
+      <!-- end -header -->
+
+      <!--start menu -->
+      <!-- <div class="row menu bg-mycolor1">
+        <div class="col-sm-8 mx-auto">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index/"
+                      ><i class="fa-solid fa-house"></i> Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/aboutus/"><i class="fa-solid fa-circle-user"></i>Aboutus</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/profile/"><i class="fa-solid fa-user"></i> profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/category/"><i class="fa-solid fa-user"></i> category</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register/"><i class="fa-solid fa-registered"></i>register </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact/"><i class="fa-solid fa-phone-volume"></i> Help and support </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/order/"><i class="fa-solid fa-user"></i> order</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/team/"><i class="fa-solid fa-people-group"></i> team</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/profile/"><i class="fa-solid fa-user"></i> my profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/gallery/"><i class="fa-solid fa-user"></i> gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login/"><i class="fa-solid fa-user"></i> login</a>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div> -->
+      <!-- end menu -->
+
+       <!--vertical Menu section start-->
+       <div class="row bg-mycolor1">
+        <div class="col-sm-12">
+            <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <I class="fa-solid fa-bars"></I>
+              </a>
+              
+              
+              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body bg-mycolor1"id="verticalmenu">
+                  <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-photo-film"></i>gallery</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-circle-notch"></i>about</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-phone"></i>contect</a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+        </div>
+       </div>
+
+       <!--vertical Menu section end-->
+       <!--dashboard start-->
+
+       <div class="row py-2">
+        <p class="fs-3 text-center">welcome,<b class="text-mycolor1">Amit Kushwaha</b></p>
+        <div class="col-sm-10 mx-auto">
+          <div class="row py-3">
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2 " id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #d11616"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #00ACC1"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #009688"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #1bca72"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+          </div>
+          <div class="row py-3">
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2 " id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #3dbae7"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #1DE9B6"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #AED581"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+            <!--dashboard card start-->
+            <div class="col-sm-3 mb-2" id="dashboard">
+              <a href="#">
+              <div class="card mx-auto shadow-lg border border-0 w-75 rounded-4 dashboardcard">
+                <div class="text-center dashdiv"><i class="fa-solid fa-user dashboardic" style="background: #C0CA33"></i></div>
+                <h4 class="text-center mb-5">Profile</h4>
+              </div>
+              </a>
+            </div>
+            <!--dashboard card end-->
+          </div>
+        </div>
+       </div>
+       <!--dashboard end-->
+
+      {% block content %}
+      
+      {% endblock %}
+
+
+      
+      <!-- u footer start -->
+
+      <div class="row ufooter">
+        <div class="col-sm-10 mx-auto">
+          <div class="row p-4">
+            <div class="col-sm-3 text-light">
+              <h5>About Website</h5>
+              <p style="font-size: 12px">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatum nihil consequuntur necessitatibus unde laborum eum
+                asperiores fuga quas amet, ipsa expedita similique praesentium
+                ducimus excepturi aliquid ipsum perferendis! Eos provident
+                beatae unde, explicabo nulla fuga aperiam officiis quod culpa
+                doloribus.
+              </p>
+            </div>
+            <div class="col-sm-3 text-light ps-3">
+              <p><i class="fa-solid fa-arrow-right"></i> Home</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Aboutus</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Our team</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Our Services</p>
+              <p><i class="fa-solid fa-phone-volume"></i> Contact Us</p>
+            </div>
+            <div class="col-sm-3 text-light ps-3">
+              <p><i class="fa-solid fa-arrow-right"></i> Home</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Aboutus</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Our team</p>
+              <p><i class="fa-solid fa-arrow-right"></i> Our Services</p>
+              <p><i class="fa-solid fa-phone-volume"></i> Contact Us</p>
+            </div>
+            <div class="col-sm-3 text-light">
+              <h5>Get in touch</h5>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> Mangalpur Bazar,Nautan ,West champaran (Bihar) 845459
+              </p>
+              <p><i class="fa-solid fa-phone"></i> 91+ 9135660323</p>
+              <p><i class="fa-solid fa-phone"></i> 91+ 9128804401</p>
+              <i class="fa-brands fa-square-facebook ic"></i>
+              <i class="fa-brands fa-square-twitter ic"></i>
+              <i class="fa-brands fa-linkedin ic"></i>
+              <i class="fa-brands fa-instagram ic"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bfooter text-center">
+        <span style="line-height: 50px"
+          >Developed By Amit Kushwaha &copy;
+          <a
+            href="https://www.instagram.com/the_amit_kushwaha_?igsh=dTV2YWhvYmVremZx"
+            target="_main"
+            >Amit Kushwaha</a
+          ></span
+        >
+      </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+  </body>
+</html>

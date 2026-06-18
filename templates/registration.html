@@ -1,0 +1,178 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<style>
+.register-section{
+    padding:50px 0;
+}
+
+.register-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0px 15px 40px rgba(0,0,0,0.12);
+}
+
+.register-img{
+    height:100%;
+    min-height:700px;
+    object-fit:cover;
+}
+
+.form-box{
+    padding:40px;
+}
+
+.form-title{
+    font-size:38px;
+    font-weight:800;
+    color:#198754;
+}
+
+.form-subtitle{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.custom-input{
+    border:none;
+    border-radius:15px;
+    padding:15px;
+    background:#f7f7f7;
+    transition:.3s;
+}
+
+.custom-input:focus{
+    background:white;
+    box-shadow:0 0 15px rgba(25,135,84,.2);
+}
+
+.register-btn{
+    background:linear-gradient(135deg,#198754,#32cd32);
+    color:white;
+    border:none;
+    border-radius:15px;
+    padding:14px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(25,135,84,.3);
+}
+</style>
+
+<div class="container register-section">
+
+    <div class="register-card">
+
+        <div class="row g-0">
+
+            <div class="col-lg-5">
+
+                <img src="{% static 'images/c2.png' %}"
+                     class="w-100 register-img">
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <div class="form-box">
+
+                    <h2 class="form-title">
+                        Join CropCare 🌱
+                    </h2>
+
+                    <p class="form-subtitle">
+                        Create your account and start shopping fresh products.
+                    </p>
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <input type="text"
+                                name="uname"
+                                class="form-control custom-input"
+                                placeholder="Full Name">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="email"
+                                name="uemail"
+                                class="form-control custom-input"
+                                placeholder="Email Address">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="password"
+                                name="upass"
+                                class="form-control custom-input"
+                                placeholder="Password">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="number"
+                                name="umob"
+                                class="form-control custom-input"
+                                placeholder="Mobile Number">
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <input type="text"
+                                name="uaddress"
+                                class="form-control custom-input"
+                                placeholder="Full Address">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="number"
+                                name="upin"
+                                class="form-control custom-input"
+                                placeholder="Pincode">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="text"
+                                name="umark"
+                                class="form-control custom-input"
+                                placeholder="Landmark">
+                            </div>
+
+                            <div class="col-12 mb-4">
+                                <input type="file"
+                                name="upic"
+                                class="form-control custom-input">
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit"
+                                class="btn register-btn w-100">
+
+                                    Register Now 🚀
+
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock%}

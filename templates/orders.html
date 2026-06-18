@@ -1,0 +1,4 @@
+
+{% if not request.session.email %}
+<script>alert('you have login first..');location.href='/login/'</script>
+{% endif %}

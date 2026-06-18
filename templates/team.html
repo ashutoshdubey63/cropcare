@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Team section start -->
+
+<style>
+
+.teamsection{
+    background:#f4f8f4;
+    padding:80px 20px;
+}
+
+.teamtitle{
+    font-size:50px;
+    font-weight:800;
+}
+
+.teamcard{
+    background:white;
+    border-radius:35px;
+    overflow:hidden;
+    transition:0.5s;
+    box-shadow:0px 10px 35px rgba(0,0,0,0.08);
+    position:relative;
+}
+
+.teamcard:hover{
+    transform:translateY(-12px);
+}
+
+.teamimgbox{
+    height:380px;
+    overflow:hidden;
+    position:relative;
+}
+
+.teamimg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.teamcard:hover .teamimg{
+    transform:scale(1.08);
+}
+
+.teamoverlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:80px 20px 20px;
+    background:linear-gradient(
+    transparent,
+    rgba(0,0,0,0.8)
+    );
+}
+
+.membername{
+    font-size:30px;
+    font-weight:800;
+    color:white;
+}
+
+.memberrole{
+    color:#d1ffd8;
+    font-size:18px;
+}
+
+.socialicons a{
+    text-decoration:none;
+}
+
+.socialicons i{
+    height:45px;
+    width:45px;
+    border-radius:50%;
+    background:white;
+    color:#198754;
+    text-align:center;
+    line-height:45px;
+    margin:0px 5px;
+    transition:0.4s;
+}
+
+.socialicons i:hover{
+    transform:translateY(-6px);
+    background:#198754;
+    color:white;
+}
+
+</style>
+
+<div class="container-fluid teamsection">
+
+<div class="container">
+
+<h1 class="text-center teamtitle">
+
+Our Team 🌱
+
+</h1>
+
+<p class="text-center text-muted mb-5">
+
+Meet the people behind CropCare.
+
+</p>
+
+<div class="row g-4">
+
+<!-- MEMBER 1 -->
+
+<div class="col-lg-4">
+
+<div class="teamcard">
+
+<div class="teamimgbox">
+
+<img src="{% static 'images/a2.jpg' %}"
+class="teamimg">
+
+<div class="teamoverlay">
+
+<h2 class="membername">
+
+Ashutosh Dubey
+
+</h2>
+
+<p class="memberrole">
+
+Founder & Developer
+
+</p>
+
+<div class="socialicons mt-3">
+
+<a href="https://facebook.com"
+target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+<a href="https://instagram.com"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<a href="https://linkedin.com"
+target="_blank">
+
+<i class="fa-brands fa-linkedin-in"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MEMBER 2 -->
+
+<div class="col-lg-4">
+
+<div class="teamcard">
+
+<div class="teamimgbox">
+
+<img src="{% static 'images/k1.jpeg' %}"
+class="teamimg">
+
+<div class="teamoverlay">
+
+<h2 class="membername">
+
+Project Guide
+
+</h2>
+
+<p class="memberrole">
+
+Mentor & Support
+
+</p>
+
+<div class="socialicons mt-3">
+
+<a href="https://facebook.com"
+target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+<a href="https://instagram.com"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<a href="https://linkedin.com"
+target="_blank">
+
+<i class="fa-brands fa-linkedin-in"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MEMBER 3 -->
+
+<div class="col-lg-4">
+
+<div class="teamcard">
+
+<div class="teamimgbox">
+
+<img src="{% static 'images/b1.jpg' %}"
+class="teamimg">
+
+<div class="teamoverlay">
+
+<h2 class="membername">
+
+DIRECTOR Sir
+
+</h2>
+
+<p class="memberrole">
+
+Department Head
+
+</p>
+
+<div class="socialicons mt-3">
+
+<a href="https://facebook.com"
+target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+<a href="https://instagram.com"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<a href="https://linkedin.com"
+target="_blank">
+
+<i class="fa-brands fa-linkedin-in"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+  <!-- Team section end -->
+
+{% endblock %}

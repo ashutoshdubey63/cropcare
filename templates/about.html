@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- aboutus start -->
+<div class="row Aboutus py-2">
+    <p class="text-center fs-3">About<b class="text-mycolor1">Us</b></p>
+    <div class="col-sm-10 mx-auto">
+      <div class="row">
+        <div class="col-sm-6">
+          <img
+            src="{% static '/images/sho.jpeg' %}"
+            class="img-thumbnail w-100 imgabout"
+            alt=""
+          />
+        </div>
+        <div class="col-sm-6">
+          <p class="p-3 aboutcontent">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            facere quo aut consectetur illo sapiente cupiditate omnis atque,
+            corporis dolorem, animi cum ex error ea. Cumque ratione quod
+            soluta eius.
+          </p>
+          <p class="px-3 aboutcontent">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            facere quo aut consectetur illo sapiente cupiditate omnis atque,
+            corporis dolorem, animi cum ex error ea. Cumque ratione quod
+            soluta eius.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- aboutus end -->
+
+{% endblock %}

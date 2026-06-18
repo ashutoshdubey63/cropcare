@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if not request.session.email %}
+<script>alert('You have to login first...'); location.href = '/login/'</script>
+{% endif %}
+
+
+<div class="row py-2">
+    <div class="col-sm-12 text-center">
+        <div class="fs-3 ">Pending <b class="text-mycolor1">Product</b></div>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <hr class="w-25 mx-auto" />
+    </div>
+    {% for r in pending %}
+    <div class="col-sm-11 mx-auto">
+        <div class="row py-3">
+            <div class="col-sm-12 mx-auto">
+                <div class="card mx-auto shadow-lg border border-0">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="../{{r.product_picture}}" class="img-fluid rounded-start cartimg" alt="...">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <table class="table table-striped" cellpadding="10">
+                                    <tr>
+                                        <th>Name /Information</th>
+                                        <th>Unit</th>
+                                        <th>Price</th>
+                                        <th>discounted price</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Added Date</th>
+                                        <th>Order Status</th>
+                                        <th>Cancel</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{r.product_name}}</b><br>
+                                            {{r.product_info | slice:100}}</td>
+                                        <td>{{r.product_weight}}</td>
+                                        <td>{{r.product_price}}</td>
+                                        <td>{{r.discounted_price}}</td>
+                                        <td>{{r.product_quantity}}</td>
+                                        <td>{{r.total_price}}</td>
+                                        <td>{{r.added_date}}</td>
+                                        <td><span class="badge bg-danger text-light rounded-pill">{{r.Status}}</span></td>
+                                        <td><a href="/myorders/?oid={{r.id}}" class="btn bg-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!--Success Product-->
+
+<div class="row py-2">
+    <div class="col-sm-12 text-center">
+        <div class="fs-3 ">Success <b class="text-mycolor1">Product</b></div>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <hr class="w-25 mx-auto" />
+    </div>
+    {% for r in success %}
+    <div class="col-sm-11 mx-auto">
+        <div class="row py-3">
+            <div class="col-sm-12 mx-auto">
+                <div class="card mx-auto shadow-lg border border-0">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="../{{r.product_picture}}" class="img-fluid rounded-start cartimg" alt="...">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <table class="table table-striped" cellpadding="10">
+                                    <tr>
+                                        <th>Name /Information</th>
+                                        <th>Unit</th>
+                                        <th>Price</th>
+                                        <th>discounted price</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Added Date</th>
+                                        <th>Order Status</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{r.product_name}}</b><br>
+                                            {{r.product_info | slice:100}}</td>
+                                        <td>{{r.product_weight}}</td>
+                                        <td>{{r.product_price}}</td>
+                                        <td>{{r.discounted_price}}</td>
+                                        <td>{{r.product_quantity}}</td>
+                                        <td>{{r.total_price}}</td>
+                                        <td>{{r.added_date}}</td>
+                                        <td><span class="badge bg-warning text-light rounded-pill">{{r.status}}</span></td>
+                                        <td>href="/cart/?cid={{r.id}}" class="btn bg-danger"
+                                        <i class="fa-solid fa-trash"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <!--Success end-->
+    <!--Start delivered-->
+
+<div class="row py-2">
+    <div class="col-sm-12 text-center">
+        <div class="fs-3 ">Delivered<b class="text-mycolor1">Product</b></div>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <hr class="w-25 mx-auto" />
+    </div>
+    {% for r in delivered %}
+    <div class="col-sm-11 mx-auto">
+        <div class="row py-3">
+            <div class="col-sm-12 mx-auto">
+                <div class="card mx-auto shadow-lg border border-0">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="../{{r.product_picture}}" class="img-fluid rounded-start cartimg" alt="...">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <table class="table table-striped" cellpadding="10">
+                                    <tr>
+                                        <th>Name /Information</th>
+                                        <th>Unit</th>
+                                        <th>Price</th>
+                                        <th>discounted price</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Added Date</th>
+                                        <th>Order Status</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{r.product_name}}</b><br>
+                                            {{r.product_info | slice:100}}</td>
+                                        <td>{{r.product_weight}}</td>
+                                        <td>{{r.product_price}}</td>
+                                        <td>{{r.discounted_price}}</td>
+                                        <td>{{r.product_quantity}}</td>
+                                        <td>{{r.total_price}}</td>
+                                        <td>{{r.added_date}}</td>
+                                        <td><span class="badge bg-warning text-light rounded-pill">{{r.status}}</span></td>
+                                        <td> href="/cart/?cid={{r.id}}" class="btn bg-danger"><i
+                                                    class="fa-solid fa-trash"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!--end delivered-->
+
+    {% endblock %}

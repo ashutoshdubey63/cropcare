@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if not request.session.email %}
+<script>alert('you have login first..');location.href='/login/'</script>
+{% endif %}
+<style>
+ <style>
+
+.profilepage{
+    background:#f4f8f4;
+    padding:60px 20px;
+}
+
+.profilecard{
+    background:white;
+    border-radius:35px;
+    padding:60px 40px 40px;
+    position:relative;
+    box-shadow:0px 10px 35px rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+
+.profilebanner{
+    height:180px;
+    border-radius:25px;
+    background:linear-gradient(
+    135deg,
+    #198754,
+    #3cb371
+    );
+    margin-bottom:80px;
+}
+
+.profileimg{
+    height:170px;
+    width:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    position:absolute;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0px 8px 25px rgba(0,0,0,0.2);
+}
+
+.username{
+    font-size:42px;
+    font-weight:800;
+    margin-top:20px;
+}
+
+.useremail{
+    color:#666;
+    font-size:18px;
+}
+
+.socialicons i{
+    height:45px;
+    width:45px;
+    border-radius:50%;
+    background:#198754;
+    color:white;
+    text-align:center;
+    line-height:45px;
+    margin:0px 5px;
+    transition:0.4s;
+}
+
+.socialicons i:hover{
+    transform:translateY(-5px);
+}
+
+.infobox{
+    background:#f8f9fa;
+    border-radius:18px;
+    padding:20px;
+    height:100%;
+}
+
+.infobox h6{
+    color:#198754;
+    font-weight:bold;
+}
+
+.updatebtn{
+    border-radius:14px;
+    padding:14px 30px;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+.updatebtn:hover{
+    transform:translateY(-4px);
+    box-shadow:0px 10px 25px rgba(25,135,84,0.25);
+}
+
+.editbox{
+    background:white;
+    border-radius:30px;
+    padding:40px;
+    box-shadow:0px 10px 35px rgba(0,0,0,0.08);
+}
+
+.form-control{
+    height:58px;
+    border-radius:14px;
+}
+
+</style>
+
+<script>
+ 
+
+function demo(){
+
+var x=document.getElementById("editprofile");
+
+if(x.style.display==="none"){
+
+    x.style.display="block";
+
+    x.style.opacity="0";
+
+    setTimeout(()=>{
+
+        x.style.transition="0.5s";
+
+        x.style.opacity="1";
+
+    },100);
+
+}
+
+else{
+
+    x.style.display="none";
+
+}
+
+}
+
+</script>
+
+<div class="row py-2">
+    <p class="fs-3 text-center">Hello <b class="text-mycolor1">profile</b></p>
+    {% for r in data %}
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+            <div class="col-sm-10 mx-auto ">
+           <div class="profilecard">
+
+<div class="profilebanner"></div>
+
+<img src="../{{r.picture}}"
+class="profileimg">
+
+<h2 class="text-center username">
+
+{{r.name}}
+
+</h2>
+
+<p class="text-center useremail">
+
+{{r.email}}
+
+</p>
+
+<div class="text-center socialicons mt-3">
+
+<i class="fa-brands fa-facebook-f"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-linkedin-in"></i>
+<i class="fa-brands fa-twitter"></i>
+
+</div>
+
+<div class="row mt-5">
+
+<div class="col-md-4 mb-3">
+
+<div class="infobox">
+
+<h6>Address</h6>
+
+<p>
+
+{{r.address}}
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<div class="infobox">
+
+<h6>Mobile</h6>
+
+<p>
+
+{{r.mobile}}
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<div class="infobox">
+
+<h6>Joined Date</h6>
+
+<p>
+
+{{r.regdate}}
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+
+<a onclick="demo()"
+href="#"
+class="btn btn-success updatebtn">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Update Profile
+
+</a>
+
+</div>
+
+</div>
+            </div>
+        </div>
+    </div>
+  <div class="col-lg-7 mx-auto mt-5"
+style="display:none;"
+id="editprofile">
+       <div class="editbox">
+            <div class="col-sm-12">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-floating mb-4">
+                        <input type="text" value="{{r.name}}" class="form-control" id="floatingInput" name="uname" placeholder="name@example.com">
+                        <label for="floatingInput">Name..</label>
+                      </div>
+                      
+                      <div class="form-floating mb-4">
+                        <input type="password" value="{{r.password}}" class="form-control" id="floatingPassword" name="upassword" placeholder="Password">
+                        <label for="floatingPassword">password</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="number" value="{{r.mobile}}" class="form-control" id="floatingInput" name="umob" placeholder="name@example.com">
+                        <label for="floatingInput">Mobile No..</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="text" value="{{r.address}}" class="form-control" id="floatingPassword" name="uaddress" placeholder="Password">
+                        <label for="floatingPassword"> Full Address..</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="number" value="{{r.pincode}}" class="form-control" id="floatingInput" name="upin" placeholder="name@example.com">
+                        <label for="floatingInput">pincode..</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="text" value="{{r.landmark}}" class="form-control" id="floatingPassword" name="umark" placeholder="Password">
+                        <label for="floatingPassword">Landmark..</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="file" required id="flotingpassword" class="form-control" id="floatingInput" name="upic" placeholder="name@example.com">
+                        <label for="floatingPassword">profile picture</label>
+                      </div>
+                      
+                      <div><input type="submit" value="UPDATE" class="form-control bg-mycolor1"></div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
